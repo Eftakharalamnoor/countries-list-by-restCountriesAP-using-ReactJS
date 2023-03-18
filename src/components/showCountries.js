@@ -8,7 +8,7 @@ const ShowCountries = () => {
   const [countryList, setCountryList] = useState([]);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(25);
+  const [postsPerPage] = useState(25);
 
   // Fetch country List
   useEffect(() => {
