@@ -9,15 +9,16 @@ const AllBtn = ({ assendingHandler, dessendingHandler, handleFilterByArea,handle
           <button onClick={dessendingHandler}>Descending</button>
         </div>
         <div className="right">
+          <span>Filter By Location</span>
     <form>
       <div className="labelAll">
       <input type="checkbox" onChange={handleFilterByArea} />
-      <label>Lithuania Area</label>
+      <label>Lithuania</label>
       </div>
 
       <div className="labelAll">
       <input type="checkbox" onChange={handleFilterByRegion} />
-      <label>Oceania Region</label>
+      <label>Oceania</label>
       </div>
     
     

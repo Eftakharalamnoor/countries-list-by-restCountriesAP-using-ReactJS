@@ -54,10 +54,20 @@ input[type="text"]{
   padding: 5px 10px 5px 15px;
 }
 
+.allBtn .right form{
+ margin-top: 5px;
+}
+
+.allBtn .right span{
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .allBtn button{
   background-color: rgb(81, 227, 81);
   color: #000000;
-  padding: 10px 15px;
+  padding: 0px 15px;
+    height: 28px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
