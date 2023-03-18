@@ -9,6 +9,8 @@ const ShowCountries = () => {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(25);
+  const [filterByArea, setFilterByArea] = useState(false);
+  const [filterByRegion, setFilterByRegion] = useState(false);
 
   // Fetch country List
   useEffect(() => {
@@ -66,20 +68,40 @@ const ShowCountries = () => {
   };
 
   // Filter the CountryList
-  const filterBy = () => {
-    let data = [...countryList];
-    data = data.filter((country) => {
-      if (country.area !== "Lithuania") {
-        return (
-          country.area < countryList.find((c) => c.name === "Lithuania").area
-        );
-      }
-      return false;
-    });
-    data = data.filter((country) => country.region === "Oceania");
-    setCountryList(data);
-    console.log(data.length);
+  const handleFilterByArea = () => {
+    setFilterByArea(!filterByArea);
   };
+  
+  const handleFilterByRegion = () => {
+    setFilterByRegion(!filterByRegion);
+  };
+
+  useEffect(() => {
+    let data = [...countryList];
+    if (filterByRegion) {
+      data = data.filter((country) => country.region === "Oceania");
+    }
+    setCountryList(data);
+    // eslint-disable-next-line
+  }, [filterByRegion]);
+  
+  useEffect(() => {
+    let data = [...countryList];
+    if (filterByArea) {
+      data = data.filter((country) => {
+        if (country.name !== "Lithuania") {
+          return (
+            country.area < countryList.find((c) => c.name === "Lithuania").area
+          );
+        }
+        return false;
+      });
+    }
+    setCountryList(data);
+    // eslint-disable-next-line
+  }, [filterByArea]);
+
+
 
   // Pagination Codes
   const lastPostIndex = currentPage * postsPerPage;
@@ -100,7 +122,8 @@ const ShowCountries = () => {
           <AllBtn
             assendingHandler={assendingHandler}
             dessendingHandler={dessendingHandler}
-            filterBy={filterBy}
+            handleFilterByArea={handleFilterByArea}
+            handleFilterByRegion={handleFilterByRegion}
           />
 
           <Pagination
@@ -111,6 +134,12 @@ const ShowCountries = () => {
           />
 
           <FetchCountries currentPosts={currentPosts} />
+          <Pagination
+            totalPosts={countryList.length}
+            postsPerPage={postsPerPage}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          />
         </div>
       )}
     </div>

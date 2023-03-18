@@ -1,6 +1,6 @@
 import React from "react";
 
-const AllBtn = ({ assendingHandler, dessendingHandler, filterBy }) => {
+const AllBtn = ({ assendingHandler, dessendingHandler, handleFilterByArea,handleFilterByRegion}) => {
   return (
     <div>
       <div className="allBtn">
@@ -9,9 +9,19 @@ const AllBtn = ({ assendingHandler, dessendingHandler, filterBy }) => {
           <button onClick={dessendingHandler}>Descending</button>
         </div>
         <div className="right">
-          <button onClick={filterBy}>
-            Filters By Lithuania Area & Oceania Region{" "}
-          </button>
+    <form>
+      <div className="labelAll">
+      <input type="checkbox" onChange={handleFilterByArea} />
+      <label>Lithuania Area</label>
+      </div>
+
+      <div className="labelAll">
+      <input type="checkbox" onChange={handleFilterByRegion} />
+      <label>Oceania Region</label>
+      </div>
+    
+    
+    </form>
         </div>
       </div>
     </div>

@@ -18,7 +18,13 @@ html,body{
 /* Form */
 
 form{
-  margin-bottom: 20px;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  padding: 0px 10px;
 }
 
 input[type="text"]{
@@ -27,6 +33,7 @@ input[type="text"]{
   border: none;
   border-radius: 5px;
   padding: 3px 10px;
+  margin-bottom: 20px;
 }
 
 /* allBtn */
@@ -40,6 +47,11 @@ input[type="text"]{
 .allBtn .left{
   display: flex;
   gap: 30px;
+}
+
+.allBtn .right{
+  background: #ffe400;
+  padding: 5px 10px 5px 15px;
 }
 
 .allBtn button{
@@ -102,4 +114,16 @@ input[type="text"]{
   border-color: #101010;
   background: #ffe400;
   color: #101010;
+}
+
+
+/* DropDown */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  z-index: 1;
 }
