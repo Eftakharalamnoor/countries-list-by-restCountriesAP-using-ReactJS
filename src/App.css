@@ -1,15 +1,16 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
   overflow-x: hidden;
   background-color: rgb(197, 249, 197);
 }
 
-.container{
+.container {
   width: 85vw;
   margin: 0 auto;
   padding-top: 30px;
@@ -17,17 +18,16 @@ html,body{
 
 /* Form */
 
-form{
-  
+form {
   display: flex;
   flex-direction: column;
 }
 
-label{
+label {
   padding: 0px 10px;
 }
 
-input[type="text"]{
+input[type="text"] {
   width: 250px;
   height: 30px;
   border: none;
@@ -38,59 +38,57 @@ input[type="text"]{
 
 /* allBtn */
 
-.allBtn{
+.allBtn {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.allBtn .left{
+.allBtn .left {
   display: flex;
   gap: 30px;
 }
 
-.allBtn .right{
+.allBtn .right {
   background: #ffe400;
   padding: 5px 10px 5px 15px;
 }
 
-.allBtn .right form{
- margin-top: 5px;
+.allBtn .right form {
+  margin-top: 5px;
 }
 
-.allBtn .right span{
+.allBtn .right span {
   font-size: 18px;
   font-weight: 600;
 }
 
-.allBtn button{
+.allBtn button {
   background-color: rgb(81, 227, 81);
   color: #000000;
   padding: 0px 15px;
-    height: 28px;
+  height: 28px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  
 }
-
 
 /* Fetch All Countries */
 
-.fetchCountries{
+.fetchCountries {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.country{
+.country {
   background-color: rgb(151, 250, 151);
   padding: 5px 10px;
 }
 
 /* loading */
 
-.loading{
+.loading {
   font-size: 50px;
   text-align: center;
   color: black;
@@ -125,7 +123,6 @@ input[type="text"]{
   background: #ffe400;
   color: #101010;
 }
-
 
 /* DropDown */
 

@@ -71,7 +71,7 @@ const ShowCountries = () => {
   const handleFilterByArea = () => {
     setFilterByArea(!filterByArea);
   };
-  
+
   const handleFilterByRegion = () => {
     setFilterByRegion(!filterByRegion);
   };
@@ -84,7 +84,7 @@ const ShowCountries = () => {
     setCountryList(data);
     // eslint-disable-next-line
   }, [filterByRegion]);
-  
+
   useEffect(() => {
     let data = [...countryList];
     if (filterByArea) {
@@ -100,8 +100,6 @@ const ShowCountries = () => {
     setCountryList(data);
     // eslint-disable-next-line
   }, [filterByArea]);
-
-
 
   // Pagination Codes
   const lastPostIndex = currentPage * postsPerPage;
